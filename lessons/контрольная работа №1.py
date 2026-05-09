@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 
 class Hero:
-    def _init_(self, name, lvl, hp):
+    def __init__(self, name, lvl, hp):
         self.name = name
         self.lvl = lvl
         self.hp = hp
@@ -10,8 +10,8 @@ class Hero:
         return f"{self.name} готов к бою!"
 
 class MageHero(Hero):
-    def _init_(self, name, lvl, hp, mp):
-        super()._init_(name, lvl, hp)
+    def __init__(self, name, lvl, hp, mp):
+        super().__init__(name, lvl, hp)
         self.mp = mp
 
     def action(self):
@@ -19,8 +19,8 @@ class MageHero(Hero):
 
 
 class WarriorHero(MageHero):
-    def _init_(self, name, lvl, hp, mp):
-        super()._init_(name, lvl, hp, mp)
+    def __init__(self, name, lvl, hp, mp):
+        super().__init__(name, lvl, hp, mp)
 
     def action(self):
         return f"Воин {self.name} рубит мечом! Уровень: {self.lvl}"
@@ -28,7 +28,7 @@ class WarriorHero(MageHero):
 class BankAccount:
     bank_name = "Simba"
 
-    def _init_(self, hero, balance, password, bank_name):
+    def __init__(self, hero, balance, password, bank_name):
         self.hero = hero
         self._balance = balance
         self.__password = password
@@ -49,15 +49,15 @@ class BankAccount:
     def bonus_for_level(level):
         return level * 10
 
-    def _str_(self):
+    def __str__(self):
         return f"{self.hero.name} | Баланс: {self._balance} SOM"
 
-    def _add_(self, other):
+    def __add__(self, other):
         if type(self.hero) == type(other.hero):
             return self._balance + other._balance
         return "Ошибка: Нельзя сложить счета героев разных классов!"
 
-    def _eq_(self, other):
+    def __eq__(self, other):
         return (
             type(self.hero) == type(other.hero)
             and self.hero.lvl == other.hero.lvl
