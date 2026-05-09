@@ -1,7 +1,7 @@
 import random
 
 class Hero:
-    def _init_(self, name, level, health, strength):
+    def __init__(self, name, level, health, strength):
         self.name = name
         self.level = level
         self.health = health
@@ -18,8 +18,8 @@ class Hero:
         print(f"{self.name} отдыхает и восстанавливает здоровье до {self.health}")
 
 class Warrior(Hero):
-    def _init_(self, name, level, health, strength, stamina):
-        super()._init_(name, level, health, strength)
+    def __init__(self, name, level, health, strength, stamina):
+        super().__init__(name, level, health, strength)
         self.stamina = stamina
 
     def attack(self):
@@ -27,8 +27,8 @@ class Warrior(Hero):
 
 
 class Mage(Hero):
-    def _init_(self, name, level, health, strength, mana):
-        super()._init_(name, level, health, strength)
+    def __init__(self, name, level, health, strength, mana):
+        super().__init__(name, level, health, strength)
         self.mana = mana
 
     def attack(self):
@@ -36,8 +36,8 @@ class Mage(Hero):
 
 
 class Assassin(Hero):
-    def _init_(self, name, level, health, strength, stealth):
-        super()._init_(name, level, health, strength)
+    def __init__(self, name, level, health, strength, stealth):
+        super().__init__(name, level, health, strength)
         self.stealth = stealth
 
     def attack(self):
