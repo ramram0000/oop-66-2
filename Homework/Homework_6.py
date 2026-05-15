@@ -1,7 +1,7 @@
 import time
 
 class User:
-    def _init_(self, name, role):
+    def __init__(self, name, role):
         self.name = name
         self.role = role
 
