@@ -35,7 +35,7 @@ def create_product(name, price, quantity):
     conn.commit()
     conn.close()
     print(
-        f"✅ Товар '{name}' успешно добавлен! (Цена: {price}, Кол-во: {quantity})"
+        f" Товар '{name}' успешно добавлен! (Цена: {price}, Кол-во: {quantity})"
     )
 
 def read_products():
@@ -68,7 +68,7 @@ def update_product(id, price):
 
     conn.commit()
     conn.close()
-    print(f"🔄 Цена товара с ID {id} успешно обновлена на {price}.")
+    print(f" Цена товара с ID {id} успешно обновлена на {price}.")
 
 def delete_product(id):
     """Удаляет товар по его ID."""
@@ -79,7 +79,7 @@ def delete_product(id):
 
     conn.commit()
     conn.close()
-    print(f"❌ Товар с ID {id} успешно удален.")
+    print(f" Товар с ID {id} успешно удален.")
 
 if __name__ == "__main__":
     init_db()
